@@ -1,3 +1,6 @@
+#!groovy
+@Library('groovy-pipe-lib') _ 
+
 pipeline {
     agent none
     stages {
