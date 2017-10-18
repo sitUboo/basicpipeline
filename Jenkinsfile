@@ -25,6 +25,7 @@ pipeline {
                 //   url: 'https://bitbucket.beescloud.com/scm/ce/ce-424.git'
                 //]]])
                 sh 'pwd;ls;mvn package -f app/pom.xml'
+                archiveArtifacts artifacts: 'app/target/*.jar'
             }
         }          
         stage('Test') {
