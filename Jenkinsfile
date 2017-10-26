@@ -1,5 +1,8 @@
 #!groovy
+println 'downloading pipe'
 @Library('groovy-pipe-lib') _ 
+
+println 'completed'
 
 pipeline {
     agent none
