@@ -1,5 +1,5 @@
 #!groovy
-# @Library('groovy-pipe-lib') _ 
+// @Library('groovy-pipe-lib') _ 
 
 println 'completed'
 
