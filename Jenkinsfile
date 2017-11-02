@@ -1,6 +1,5 @@
 #!groovy
-println 'downloading pipe'
-@Library('groovy-pipe-lib') _ 
+# @Library('groovy-pipe-lib') _ 
 
 println 'completed'
 
