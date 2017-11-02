@@ -1,19 +1,18 @@
 #!groovy
 // @Library('groovy-pipe-lib') _ 
 
-println 'completed'
-
-pipeline {
-    agent none
-    stages {
+//pipeline {
+//    agent none
+//    stages {
         stage('Build') {
-            agent {
-                docker {
-                   image 'maven:3-alpine'
-                   args '-v $HOME/.m2:/root/.m2'
-                }
-            }
-            steps {
+  //          agent {
+  //              docker {
+  //                 image 'maven:3-alpine'
+  //                 args '-v $HOME/.m2:/root/.m2'
+  //              }
+  //          }
+  //          steps {
+            agent('linux'){
                 sh 'pwd;ls'
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: '/app']]]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b13463b7-4f76-40e0-9f40-c1669db337a0', url: 'git@github.com:sitUboo/Yui.git']]])
                 checkout([$class: 'GitSCM', branches: [[name: 'test-1']], doGenerateSubmoduleConfigurations: false, submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b13463b7-4f76-40e0-9f40-c1669db337a0', url: 'git@github.com:sitUboo/Yui.git']]])
@@ -27,16 +26,16 @@ pipeline {
                 //   url: 'https://bitbucket.beescloud.com/scm/ce/ce-424.git'
                 //]]])
                 sh 'pwd;ls;mvn package -f app/pom.xml'
-                archiveArtifacts artifacts: 'app/target/*.jar'
+                //archiveArtifacts artifacts: 'app/target/*.jar'
             }
         }          
-        stage('Test') {
-            agent {
-                label 'linux'
-            }
-            steps {
-                git credentialsId: 'b13463b7-4f76-40e0-9f40-c1669db337a0', url: 'git@github.com:buildit/jenkins-pipeline-examples.git'
-            }
-        }
-    }
-}
+        //stage('Test') {
+        //    agent {
+        //        label 'linux'
+        //    }
+        //    steps {
+        //        git credentialsId: 'b13463b7-4f76-40e0-9f40-c1669db337a0', url: 'git@github.com:buildit/jenkins-pipeline-examples.git'
+        //    }
+       // }
+    //}
+//}
