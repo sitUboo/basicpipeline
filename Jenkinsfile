@@ -1,6 +1,6 @@
 #!groovy
 @Library(value='cicd-shared-libraries@master', changelog=false)
-import org.acme.soap
+import org.acme.soap.Dial
 @Library(value='cicd-shared-libraries2@master', changelog=false)
 import se.henrrich.ci.MavenTool
 
