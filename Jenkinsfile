@@ -1,5 +1,5 @@
 #!groovy
-@Library(["cicd-shared-libraries@master", changelog=false], ["cicd-shared-libraries2@master", changelog=false]) _
+@Library([['cicd-shared-libraries@master', changelog=false]], [['cicd-shared-libraries2@master', changelog=false]]) _
 //@Library(value="cicd-shared-libraries@master", changelog=false)
 // @Library(['my-shared-library', 'otherlib@abc1234']) _
 
