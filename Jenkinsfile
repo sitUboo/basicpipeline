@@ -1,7 +1,7 @@
 #!groovy
 @Library(value='cicd-shared-libraries@master', changelog=false)
 import setNextBuildNumber
-@Library(value='cicd-shared-libraries@master2@master', changelog=false)
+@Library(value='cicd-shared-libraries2@master', changelog=false)
 import callAnotherSharedLibrary
 
 //@Library(value="cicd-shared-libraries@master", changelog=false)
