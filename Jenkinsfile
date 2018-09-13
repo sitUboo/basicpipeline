@@ -1,7 +1,5 @@
 #!groovy
-@Library(value='cicd-shared-libraries@master', changelog=false) _
-@Library(value='cicd-shared-libraries2@master', changelog=false) 
-
+@Library(['cicd-shared-libraries@master', 'cicd-shared-libraries2@master'], changelog=false) _
 
 
         stage('Build') {
