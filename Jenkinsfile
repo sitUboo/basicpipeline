@@ -1,8 +1,8 @@
 #!groovy
 @Library(value='cicd-shared-libraries@master', changelog=false)
-import setNextBuildNumber
+import readUrl
 @Library(value='cicd-shared-libraries2@master', changelog=false)
-import callAnotherSharedLibrary
+import mvn
 
 //@Library(value="cicd-shared-libraries@master", changelog=false)
 // @Library(['my-shared-library', 'otherlib@abc1234']) _
