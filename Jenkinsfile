@@ -1,9 +1,7 @@
 #!groovy
-// @Library('groovy-pipe-lib') _ 
+@Library(value='cicd-shared-libraries@master', changelog=false) _
 
-//pipeline {
-//    agent none
-//    stages {
+
         stage('Build') {
   //          agent {
   //              docker {
@@ -14,7 +12,7 @@
   //          steps {
             node {
                 sh 'pwd;ls'
-                properties([pipelineTriggers([[$class: 'GitHubPushTrigger']])])
+                properties([pipelineTriggers([pollSCM('H/2 * * * *')])])
                 git poll: true, url: 'git@github.com:sitUboo/Yui.git'
 
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [[path: '/app']]]], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'b13463b7-4f76-40e0-9f40-c1669db337a0', url: 'git@github.com:sitUboo/Yui.git']]])
