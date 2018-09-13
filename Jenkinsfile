@@ -1,8 +1,8 @@
 #!groovy
 @Library(value='cicd-shared-libraries@master', changelog=false)
-import readUrl
+import org.acme.soap
 @Library(value='cicd-shared-libraries2@master', changelog=false)
-import mvn
+import se.henrrich.ci.MavenTool
 
 //@Library(value="cicd-shared-libraries@master", changelog=false)
 // @Library(['my-shared-library', 'otherlib@abc1234']) _
