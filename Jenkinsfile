@@ -1,5 +1,8 @@
 stage('test'){
   node(){
-     sh 'set'
+    scm
+    sh 'set'
+    echo env.BRANCH_NAME
+    echo env.SVN_REVISION
   }
 }
